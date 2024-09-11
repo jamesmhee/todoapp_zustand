@@ -27,7 +27,7 @@ const Layout = ({children}:ILayoutProps) => {
             <h2 className='font-bold text-xl text-blue-500 hover:text-blue-300 select-none transition-colors duration-300'>
               TODO
             </h2>
-            <span className="text-base">
+            <span className={(userName ? 'inline-flex' : 'hidden') + "text-base"}>
               Hi, {userName}
             </span>
           </Box>
