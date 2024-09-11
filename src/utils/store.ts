@@ -4,12 +4,14 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 interface TodoState {
     todoList: TodoList[]
     updateTodoList: (todo:string) => void
+    doneTodoList: (inddex:number) => void
     deleteTodoList: (index:number) => void
 }
 
 interface TodoList {
     todo: string
     date: number
+    done: boolean
 }
 
 interface NameState {
@@ -35,8 +37,13 @@ export const useTodoStore = create<TodoState>()(
         (set)=>({
             todoList: [],
             updateTodoList: (todo:string) => set((state)=>({
-                todoList: [...state.todoList, {todo:todo, date: new Date().getTime()}]
+                todoList: [...state.todoList, {todo:todo, date: new Date().getTime(), done: false}]
             })),
+            doneTodoList: (index:number) => set((state)=>{
+                const newTodoList = [...state.todoList]
+                newTodoList[index].done = !newTodoList[index].done
+                return {todoList: newTodoList}
+            }),
             deleteTodoList: (index:number) => set((state)=>{
                 const newTodoList = [...state.todoList]
                 newTodoList.splice(index , 1)

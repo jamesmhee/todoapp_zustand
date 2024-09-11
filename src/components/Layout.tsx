@@ -10,7 +10,7 @@ interface ILayoutProps {
 const Layout = ({children}:ILayoutProps) => {
     const userName = usePersonStore((state)=>state.name)
   return (
-    <div className="w-screen h-screen bg-white relative">        
+    <div className="w-screen h-dvh bg-white">        
         <Box sx={{
           display: 'flex',       
         }}>
@@ -34,14 +34,14 @@ const Layout = ({children}:ILayoutProps) => {
         </Box>
         {
             userName ? 
-            (<div className="mx-4 h-[calc(100vh_-_155px)] overflow-y-hidden overflow-x-hidden">
+            (<div className="mx-4 h-min overflow-x-hidden overflow-y-hidden">
               {children}
             </div>
             )
             : 
             (<FirstCome/>)
         }
-        <BottomNav style={{ backgroundColor: '#ededed' }} className="absolute w-full bottom-0"/>
+        <BottomNav style={{ backgroundColor: '#ededed' }} className="fixed w-full bottom-0"/>
     </div>
   )
 }

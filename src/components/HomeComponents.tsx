@@ -5,9 +5,12 @@ const HomeComponents = () => {
   return (
     <Box sx={{
       display: 'flex',
-      width: '100%',      
+      width: '100%',
+      flexDirection: 'column'
     }}>
-      <TodoList/>
+      <div className=''>
+
+      </div>
     </Box>
   )
 }
