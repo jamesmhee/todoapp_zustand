@@ -15,7 +15,7 @@ const FirstCome = () => {
 
     return (
         <>
-            <Box sx={{display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+            <Box sx={{display: 'flex', height: 'calc(100vh - 200px)', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                 <Box
                     onSubmit={(event)=>handleSubmit(event)}
                     component="form"                    
