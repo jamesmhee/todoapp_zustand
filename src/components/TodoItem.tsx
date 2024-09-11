@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useTodoStore } from "../utils/store";
 import { Button } from "@mui/material";
+import { ImCancelCircle } from "react-icons/im";
+import { VscPass } from "react-icons/vsc";
+
 
 interface ITodoItemProps {
   todo: TodoList;
@@ -47,7 +50,7 @@ const TodoItem = ({ todo, index }: ITodoItemProps) => {
           <span>{todo.todo}</span>
         </div>
         <div className="flex gap-3">
-          {todo.done ? (<>Done</>) : (<>Not Done</>)}
+          {todo.done ? (<><VscPass className="text-green-600"/></>) : (<ImCancelCircle className="text-red-500"/>)}
         </div>
       </div>
       <div className="w-max flex flex-col relative">
