@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import TodoItem from './TodoItem';
 
 const TodoList = () => {
-    const todoList = useTodoStore((state)=>state.todoList)    
+    const todoList = useTodoStore((state)=>state.todoList)
 
   return (
     <Box sx={{
@@ -16,9 +16,10 @@ const TodoList = () => {
       }}>
         <div className='flex w-screen flex-col gap-3 py-2'>
           {
-              todoList?.map((elm, index)=>(
-                  <TodoItem todo={elm} index={index} key={index}/>
-              ))
+              todoList?.sort((a, b) => b.date - a.date)
+              .map((elm, index) => (
+                <TodoItem todo={elm} index={index} key={index} />
+              ))            
           }
         </div>
     </Box>

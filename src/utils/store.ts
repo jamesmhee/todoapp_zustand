@@ -8,7 +8,7 @@ interface TodoState {
     deleteTodoList: (index:number) => void
 }
 
-interface TodoList {
+export interface TodoList {
     todo: string
     date: number
     done: boolean
