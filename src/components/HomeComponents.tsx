@@ -23,22 +23,22 @@ const HomeComponents = () => {
       <div className='flex justify-between gap-3'>
         <div className='flex-auto basis-5/12 h-[250px] bg-[#ededed] rounded-md p-2'>
           <h1 className='text-md font-bold border-b border-zinc-300'>How many your list</h1>
-            <div>
+            <div className='flex items-center justify-center h-full text-2xl'>
               {todoList.length}
             </div>
           </div>
         <div className='flex-auto basis-1/12 flex flex-col gap-3'>
           <div className='flex-auto basis-1/12 bg-[#ededed] p-2 rounded-md'>
             <h1 className='text-md font-bold border-b border-zinc-300'>On this day</h1>
-            <p>
+            <div className='flex items-center justify-center h-full text-2xl'>
               {findThisDay(todoList)}
-            </p>            
+            </div>            
           </div>
           <div className='flex-auto basis-1/12 bg-[#ededed] p-2 rounded-md'>
             <h1 className='text-md font-bold border-b border-zinc-300'>Done</h1>
-            <p>
+            <div className='flex items-center justify-center h-full text-2xl'>
               {findDone(todoList)}
-            </p>            
+            </div>            
           </div>
         </div>        
       </div>

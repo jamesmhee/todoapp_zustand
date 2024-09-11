@@ -10,7 +10,7 @@ interface ILayoutProps {
 const Layout = ({children}:ILayoutProps) => {
     const userName = usePersonStore((state)=>state.name)
   return (
-    <div className="w-screen h-dvh bg-white">        
+    <div className="w-screen h-dvh bg-gradient-to-b from-white via-zinc-100 to-blue-50">        
         <Box sx={{
           display: 'flex',       
         }}>
